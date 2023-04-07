@@ -40,7 +40,9 @@ X_test, y_test = X_test.to(device), y_test.to(device)
 torch.manual_seed(42)
 model_0 =nn.Sequential(
     nn.Linear(in_features=1, out_features=50),
-    nn.Linear(in_features=50, out_features=1)
+    nn.Linear(in_features=50, out_features=250),
+    nn.Linear(in_features=250, out_features=10),
+    nn.Linear(in_features=10, out_features=1)
 ).to(device)
 
 loss_fn = nn.L1Loss()
